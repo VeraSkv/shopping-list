@@ -7,3 +7,25 @@
 /* Если кликнуть повторно уже на зачеркнутый, он снова становится обычным */
 
 /* Очищать input после добавления нового элемента в список */
+const input = document.querySelector('#input');
+const items = document.querySelector('#items');
+
+input.addEventListener('enter', function() {
+    const messageText = input.value;
+
+    const newMessage = document.createElement('div');
+    newMessage.classList.add('#input');
+    newMessage.textContent = messageText;
+
+    if (messageText != '') {
+        items.append(newMessage);
+    }
+
+    items.classList.add('done');
+
+    if (items != '') {
+        items.classList.remove('done');
+    }
+
+    input.value = '';
+});
