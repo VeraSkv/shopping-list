@@ -21,11 +21,11 @@ input.addEventListener('enter', function() {
         items.append(newMessage);
     }
 
-    items.classList.add('done');
-
-    if (items != '') {
-        items.classList.remove('done');
-    }
-
     input.value = '';
+});
+
+newMessage.addEventListener('enter', function() {
+    //newMessage.classList.add('done');
+    newMessage.classList.toggle('done');
+
 });
