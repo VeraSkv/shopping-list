@@ -11,21 +11,25 @@ const input = document.querySelector('#input');
 const items = document.querySelector('#items');
 
 input.addEventListener('enter', function() {
-    const messageText = input.value;
 
-    const newMessage = document.createElement('div');
-    newMessage.classList.add('#input');
-    newMessage.textContent = messageText;
+    if (input) {
+        const messageText = input.value;
 
-    if (messageText != '') {
-        items.append(newMessage);
+        const newMessage = document.createElement('li');
+        newMessage.classList.add('#input');
+        newMessage.textContent = messageText;
+
+        if (messageText != '') {
+            items.append(newMessage);
+        }
+
+        input.value = '';
     }
 
-    input.value = '';
 });
 
 newMessage.addEventListener('enter', function() {
-    //newMessage.classList.add('done');
+    newMessage.classList.add('done');
     newMessage.classList.toggle('done');
 
 });
