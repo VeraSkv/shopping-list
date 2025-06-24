@@ -10,14 +10,18 @@
 const input = document.querySelector('#input');
 const items = document.querySelector('#items');
 
-input.addEventListener('enter', function() {
+input.addEventListener('keydown', function() {
 
-    if (input) {
+    if ('click') {
         const messageText = input.value;
 
         const newMessage = document.createElement('li');
-        newMessage.classList.add('#input');
         newMessage.textContent = messageText;
+
+        newMessage.addEventListener('click', function() {
+            newMessage.classList.toggle('done');
+
+        });
 
         if (messageText != '') {
             items.append(newMessage);
@@ -25,11 +29,5 @@ input.addEventListener('enter', function() {
 
         input.value = '';
     }
-
-});
-
-newMessage.addEventListener('enter', function() {
-    newMessage.classList.add('done');
-    newMessage.classList.toggle('done');
 
 });
