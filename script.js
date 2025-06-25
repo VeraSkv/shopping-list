@@ -10,9 +10,9 @@
 const input = document.querySelector('#input');
 const items = document.querySelector('#items');
 
-input.addEventListener('keydown', function() {
+input.addEventListener('keydown', function(event) {
 
-    if ('click') {
+    if (event.key == "Enter") {
         const messageText = input.value;
 
         const newMessage = document.createElement('li');
